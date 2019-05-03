@@ -1,0 +1,7 @@
+gcc -o ThesisWormRemoteLoader_Release_2012-03-21.exe -s -Os main.c -lws2_32 -lwsock32
+
+Use http://upx.sourceforge.net/ to compress the executable down some more:
+
+upx --best ThesisWormRemoteLoader_Release_2012-03-21.exe
+
+I got about a 6KB file this way.

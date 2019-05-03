@@ -1,0 +1,10 @@
+WindowsXP-KB823980-x86-ENU
+
+http://www.microsoft.com/download/en/details.aspx?displaylang=en&id=6188
+
+http://technet.microsoft.com/en-us/security/bulletin/ms03-026
+Windows XP 32 bit Edition
+
+http://support.microsoft.com/kb/823980
+
+Requires reboot

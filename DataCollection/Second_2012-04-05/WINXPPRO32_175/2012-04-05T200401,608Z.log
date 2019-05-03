@@ -1,0 +1,267 @@
+﻿2012-04-05T20:04:01,608Z	Beginning execution
+2012-04-05T20:04:01,608Z	Log written to C:\WINDOWS\system32\config\systemprofile/ThesisWorm/2012-04-05T200401,608Z.log
+2012-04-05T20:04:01,608Z	Begin list of all environment variables and values:
+2012-04-05T20:04:01,608Z	ALLUSERSPROFILE ==> C:\Documents and Settings\All Users
+2012-04-05T20:04:01,608Z	CommonProgramFiles ==> C:\Program Files\Common Files
+2012-04-05T20:04:01,608Z	COMPUTERNAME ==> WINXPPRO32_175
+2012-04-05T20:04:01,608Z	ComSpec ==> C:\WINDOWS\system32\cmd.exe
+2012-04-05T20:04:01,608Z	NUMBER_OF_PROCESSORS ==> 1
+2012-04-05T20:04:01,608Z	OS ==> Windows_NT
+2012-04-05T20:04:01,608Z	Path ==> C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+2012-04-05T20:04:01,608Z	PATHEXT ==> .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH
+2012-04-05T20:04:01,608Z	PROCESSOR_ARCHITECTURE ==> x86
+2012-04-05T20:04:01,608Z	PROCESSOR_IDENTIFIER ==> x86 Family 6 Model 2 Stepping 3, GenuineIntel
+2012-04-05T20:04:01,608Z	PROCESSOR_LEVEL ==> 6
+2012-04-05T20:04:01,608Z	PROCESSOR_REVISION ==> 0203
+2012-04-05T20:04:01,608Z	ProgramFiles ==> C:\Program Files
+2012-04-05T20:04:01,608Z	PROMPT ==> $P$G
+2012-04-05T20:04:01,608Z	SystemDrive ==> C:
+2012-04-05T20:04:01,608Z	SystemRoot ==> C:\WINDOWS
+2012-04-05T20:04:01,608Z	TEMP ==> C:\WINDOWS\TEMP
+2012-04-05T20:04:01,608Z	TMP ==> C:\WINDOWS\TEMP
+2012-04-05T20:04:01,608Z	USERPROFILE ==> C:\WINDOWS\system32\config\systemprofile
+2012-04-05T20:04:01,608Z	windir ==> C:\WINDOWS
+2012-04-05T20:04:01,608Z	End of all environment variables and values
+2012-04-05T20:04:01,608Z	Begin list of argv:
+2012-04-05T20:04:01,608Z	C:\Windows\Temp\benevolent-worm.exe
+2012-04-05T20:04:01,608Z	benevolent-worm.exe
+2012-04-05T20:04:01,608Z	WormOptions.2012-04-05T200400,577Z
+2012-04-05T20:04:01,608Z	os-update.exe
+2012-04-05T20:04:01,608Z	End list of argv:
+2012-04-05T20:04:01,608Z	Version hash:  356d08eb50ab1bbec9b176635f9e189e
+2012-04-05T20:04:01,624Z	Hostname (according to OS not DNS) is winXPPro32_175
+2012-04-05T20:04:01,624Z	Host addresses on machine:
+2012-04-05T20:04:01,639Z	192.168.0.175
+2012-04-05T20:04:01,639Z	Parent (source) of worm IP address:  192.168.0.174:1041
+2012-04-05T20:04:01,639Z	Parent (source) timestamp:  2012-04-05T20:04:00,623Z
+2012-04-05T20:04:01,639Z	Root server for worm has IP/ID of:  192.168.0.2
+2012-04-05T20:04:01,639Z	Target List:
+2012-04-05T20:04:01,639Z		192.168.0.176
+2012-04-05T20:04:01,639Z		192.168.0.177
+2012-04-05T20:04:01,639Z		192.168.0.178
+2012-04-05T20:04:01,639Z		192.168.0.179
+2012-04-05T20:04:01,639Z		192.168.0.180
+2012-04-05T20:04:01,639Z		192.168.0.181
+2012-04-05T20:04:01,639Z		192.168.0.182
+2012-04-05T20:04:01,639Z		192.168.0.183
+2012-04-05T20:04:01,639Z		192.168.0.184
+2012-04-05T20:04:01,639Z		192.168.0.185
+2012-04-05T20:04:01,639Z		192.168.0.186
+2012-04-05T20:04:01,639Z		192.168.0.187
+2012-04-05T20:04:01,639Z	Local system time for worm is 2012-04-05T20:04:01,639Z
+2012-04-05T20:04:01,639Z	Applying OS patch to this machine
+2012-04-05T20:04:01,639Z	DEBUG:	C:\Windows\Temp\os-update.exe -u -z -q
+2012-04-05T20:04:26,780Z	OS update patch applied successfully
+2012-04-05T20:04:26,780Z	Machine may need to be rebooted for patch to take affect
+2012-04-05T20:04:26,780Z	Attempting target 192.168.0.176
+2012-04-05T20:04:26,780Z	Sending exploit stage
+2012-04-05T20:04:26,780Z	Using timeout value of 5 seconds
+2012-04-05T20:04:26,780Z	DEBUG:  Starting connect attempt to 192.168.0.176:135
+2012-04-05T20:04:26,780Z	DEBUG:  TCPClient async_connect call start
+2012-04-05T20:04:26,780Z	DEBUG:  TCPClient async_connect call end
+2012-04-05T20:04:47,780Z	ERROR:  Unable to connect to 192.168.0.176:135
+2012-04-05T20:04:47,780Z	Reason:  A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2012-04-05T20:04:47,780Z	ERROR:  Failed to send exploit stage payload to 192.168.0.176:135
+2012-04-05T20:04:47,780Z	Unsuccessful
+2012-04-05T20:04:47,780Z	Attempting target 192.168.0.177
+2012-04-05T20:04:47,780Z	Sending exploit stage
+2012-04-05T20:04:47,780Z	Using timeout value of 5 seconds
+2012-04-05T20:04:47,780Z	DEBUG:  Starting connect attempt to 192.168.0.177:135
+2012-04-05T20:04:47,780Z	DEBUG:  TCPClient async_connect call start
+2012-04-05T20:04:47,780Z	DEBUG:  TCPClient async_connect call end
+2012-04-05T20:05:08,780Z	ERROR:  Unable to connect to 192.168.0.177:135
+2012-04-05T20:05:08,780Z	Reason:  A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2012-04-05T20:05:08,780Z	ERROR:  Failed to send exploit stage payload to 192.168.0.177:135
+2012-04-05T20:05:08,780Z	Unsuccessful
+2012-04-05T20:05:08,780Z	Attempting target 192.168.0.178
+2012-04-05T20:05:08,780Z	Sending exploit stage
+2012-04-05T20:05:08,780Z	Using timeout value of 5 seconds
+2012-04-05T20:05:08,780Z	DEBUG:  Starting connect attempt to 192.168.0.178:135
+2012-04-05T20:05:08,780Z	DEBUG:  TCPClient async_connect call start
+2012-04-05T20:05:08,780Z	DEBUG:  TCPClient async_connect call end
+2012-04-05T20:05:08,827Z	DEBUG:  TCPClient successful connection
+2012-04-05T20:05:08,827Z	Connection channel (TCP) established:  192.168.0.175:1041 -> 192.168.0.178:135
+2012-04-05T20:05:08,827Z	Attempting to send 2404 bytes
+2012-04-05T20:05:08,827Z	Sent 2404 bytes
+2012-04-05T20:05:08,827Z	DEBUG:  TCPClient close() for 192.168.0.178:135
+2012-04-05T20:05:08,827Z	Closed connection
+2012-04-05T20:05:09,827Z	Sending remote loader payload
+2012-04-05T20:05:09,827Z	Using timeout value of 5 seconds
+2012-04-05T20:05:09,827Z	DEBUG:  Starting connect attempt to 192.168.0.178:4444
+2012-04-05T20:05:09,827Z	DEBUG:  TCPClient async_connect call start
+2012-04-05T20:05:09,827Z	DEBUG:  TCPClient async_connect call end
+2012-04-05T20:05:10,827Z	ERROR:  Unable to connect to 192.168.0.178:4444
+2012-04-05T20:05:10,827Z	Reason:  No connection could be made because the target machine actively refused it
+2012-04-05T20:05:10,827Z	ERROR:  Failed to send remote loader payload to 192.168.0.178:4444
+2012-04-05T20:05:10,827Z	Unsuccessful
+2012-04-05T20:05:10,827Z	Attempting target 192.168.0.179
+2012-04-05T20:05:10,827Z	Sending exploit stage
+2012-04-05T20:05:10,827Z	Using timeout value of 5 seconds
+2012-04-05T20:05:10,827Z	DEBUG:  Starting connect attempt to 192.168.0.179:135
+2012-04-05T20:05:10,827Z	DEBUG:  TCPClient async_connect call start
+2012-04-05T20:05:10,827Z	DEBUG:  TCPClient async_connect call end
+2012-04-05T20:05:31,827Z	ERROR:  Unable to connect to 192.168.0.179:135
+2012-04-05T20:05:31,827Z	Reason:  A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2012-04-05T20:05:31,827Z	ERROR:  Failed to send exploit stage payload to 192.168.0.179:135
+2012-04-05T20:05:31,827Z	Unsuccessful
+2012-04-05T20:05:31,827Z	Attempting target 192.168.0.180
+2012-04-05T20:05:31,827Z	Sending exploit stage
+2012-04-05T20:05:31,827Z	Using timeout value of 5 seconds
+2012-04-05T20:05:31,827Z	DEBUG:  Starting connect attempt to 192.168.0.180:135
+2012-04-05T20:05:31,827Z	DEBUG:  TCPClient async_connect call start
+2012-04-05T20:05:31,827Z	DEBUG:  TCPClient async_connect call end
+2012-04-05T20:05:31,874Z	DEBUG:  TCPClient successful connection
+2012-04-05T20:05:31,874Z	Connection channel (TCP) established:  192.168.0.175:1050 -> 192.168.0.180:135
+2012-04-05T20:05:31,874Z	Attempting to send 2404 bytes
+2012-04-05T20:05:31,874Z	Sent 2404 bytes
+2012-04-05T20:05:31,874Z	DEBUG:  TCPClient close() for 192.168.0.180:135
+2012-04-05T20:05:31,874Z	Closed connection
+2012-04-05T20:05:32,874Z	Sending remote loader payload
+2012-04-05T20:05:32,874Z	Using timeout value of 5 seconds
+2012-04-05T20:05:32,874Z	DEBUG:  Starting connect attempt to 192.168.0.180:4444
+2012-04-05T20:05:32,874Z	DEBUG:  TCPClient async_connect call start
+2012-04-05T20:05:32,874Z	DEBUG:  TCPClient async_connect call end
+2012-04-05T20:05:33,905Z	ERROR:  Unable to connect to 192.168.0.180:4444
+2012-04-05T20:05:33,905Z	Reason:  No connection could be made because the target machine actively refused it
+2012-04-05T20:05:33,905Z	ERROR:  Failed to send remote loader payload to 192.168.0.180:4444
+2012-04-05T20:05:33,905Z	Unsuccessful
+2012-04-05T20:05:33,905Z	Attempting target 192.168.0.181
+2012-04-05T20:05:33,905Z	Sending exploit stage
+2012-04-05T20:05:33,905Z	Using timeout value of 5 seconds
+2012-04-05T20:05:33,905Z	DEBUG:  Starting connect attempt to 192.168.0.181:135
+2012-04-05T20:05:33,905Z	DEBUG:  TCPClient async_connect call start
+2012-04-05T20:05:33,905Z	DEBUG:  TCPClient async_connect call end
+2012-04-05T20:05:33,952Z	DEBUG:  TCPClient successful connection
+2012-04-05T20:05:33,952Z	Connection channel (TCP) established:  192.168.0.175:1056 -> 192.168.0.181:135
+2012-04-05T20:05:33,952Z	Attempting to send 2404 bytes
+2012-04-05T20:05:33,952Z	Sent 2404 bytes
+2012-04-05T20:05:33,952Z	DEBUG:  TCPClient close() for 192.168.0.181:135
+2012-04-05T20:05:33,952Z	Closed connection
+2012-04-05T20:05:34,952Z	Sending remote loader payload
+2012-04-05T20:05:34,952Z	Using timeout value of 5 seconds
+2012-04-05T20:05:34,952Z	DEBUG:  Starting connect attempt to 192.168.0.181:4444
+2012-04-05T20:05:34,952Z	DEBUG:  TCPClient async_connect call start
+2012-04-05T20:05:34,952Z	DEBUG:  TCPClient async_connect call end
+2012-04-05T20:05:36,92Z	ERROR:  Unable to connect to 192.168.0.181:4444
+2012-04-05T20:05:36,92Z	Reason:  No connection could be made because the target machine actively refused it
+2012-04-05T20:05:36,92Z	ERROR:  Failed to send remote loader payload to 192.168.0.181:4444
+2012-04-05T20:05:36,92Z	Unsuccessful
+2012-04-05T20:05:36,92Z	Attempting target 192.168.0.182
+2012-04-05T20:05:36,92Z	Sending exploit stage
+2012-04-05T20:05:36,92Z	Using timeout value of 5 seconds
+2012-04-05T20:05:36,92Z	DEBUG:  Starting connect attempt to 192.168.0.182:135
+2012-04-05T20:05:36,92Z	DEBUG:  TCPClient async_connect call start
+2012-04-05T20:05:36,92Z	DEBUG:  TCPClient async_connect call end
+2012-04-05T20:05:57,92Z	ERROR:  Unable to connect to 192.168.0.182:135
+2012-04-05T20:05:57,92Z	Reason:  A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2012-04-05T20:05:57,92Z	ERROR:  Failed to send exploit stage payload to 192.168.0.182:135
+2012-04-05T20:05:57,92Z	Unsuccessful
+2012-04-05T20:05:57,92Z	Attempting target 192.168.0.183
+2012-04-05T20:05:57,92Z	Sending exploit stage
+2012-04-05T20:05:57,92Z	Using timeout value of 5 seconds
+2012-04-05T20:05:57,92Z	DEBUG:  Starting connect attempt to 192.168.0.183:135
+2012-04-05T20:05:57,92Z	DEBUG:  TCPClient async_connect call start
+2012-04-05T20:05:57,92Z	DEBUG:  TCPClient async_connect call end
+2012-04-05T20:05:57,139Z	DEBUG:  TCPClient successful connection
+2012-04-05T20:05:57,139Z	Connection channel (TCP) established:  192.168.0.175:1065 -> 192.168.0.183:135
+2012-04-05T20:05:57,139Z	Attempting to send 2404 bytes
+2012-04-05T20:05:57,139Z	Sent 2404 bytes
+2012-04-05T20:05:57,139Z	DEBUG:  TCPClient close() for 192.168.0.183:135
+2012-04-05T20:05:57,139Z	Closed connection
+2012-04-05T20:05:58,139Z	Sending remote loader payload
+2012-04-05T20:05:58,139Z	Using timeout value of 5 seconds
+2012-04-05T20:05:58,139Z	DEBUG:  Starting connect attempt to 192.168.0.183:4444
+2012-04-05T20:05:58,139Z	DEBUG:  TCPClient async_connect call start
+2012-04-05T20:05:58,139Z	DEBUG:  TCPClient async_connect call end
+2012-04-05T20:05:59,139Z	ERROR:  Unable to connect to 192.168.0.183:4444
+2012-04-05T20:05:59,139Z	Reason:  No connection could be made because the target machine actively refused it
+2012-04-05T20:05:59,139Z	ERROR:  Failed to send remote loader payload to 192.168.0.183:4444
+2012-04-05T20:05:59,139Z	Unsuccessful
+2012-04-05T20:05:59,139Z	Attempting target 192.168.0.184
+2012-04-05T20:05:59,139Z	Sending exploit stage
+2012-04-05T20:05:59,139Z	Using timeout value of 5 seconds
+2012-04-05T20:05:59,139Z	DEBUG:  Starting connect attempt to 192.168.0.184:135
+2012-04-05T20:05:59,139Z	DEBUG:  TCPClient async_connect call start
+2012-04-05T20:05:59,139Z	DEBUG:  TCPClient async_connect call end
+2012-04-05T20:05:59,155Z	DEBUG:  TCPClient successful connection
+2012-04-05T20:05:59,155Z	Connection channel (TCP) established:  192.168.0.175:1071 -> 192.168.0.184:135
+2012-04-05T20:05:59,155Z	Attempting to send 2404 bytes
+2012-04-05T20:05:59,155Z	Sent 2404 bytes
+2012-04-05T20:05:59,155Z	DEBUG:  TCPClient close() for 192.168.0.184:135
+2012-04-05T20:05:59,155Z	Closed connection
+2012-04-05T20:06:00,155Z	Sending remote loader payload
+2012-04-05T20:06:00,155Z	Using timeout value of 5 seconds
+2012-04-05T20:06:00,155Z	DEBUG:  Starting connect attempt to 192.168.0.184:4444
+2012-04-05T20:06:00,155Z	DEBUG:  TCPClient async_connect call start
+2012-04-05T20:06:00,155Z	DEBUG:  TCPClient async_connect call end
+2012-04-05T20:06:01,186Z	ERROR:  Unable to connect to 192.168.0.184:4444
+2012-04-05T20:06:01,186Z	Reason:  No connection could be made because the target machine actively refused it
+2012-04-05T20:06:01,217Z	ERROR:  Failed to send remote loader payload to 192.168.0.184:4444
+2012-04-05T20:06:01,217Z	Unsuccessful
+2012-04-05T20:06:01,217Z	Attempting target 192.168.0.185
+2012-04-05T20:06:01,217Z	Sending exploit stage
+2012-04-05T20:06:01,217Z	Using timeout value of 5 seconds
+2012-04-05T20:06:01,217Z	DEBUG:  Starting connect attempt to 192.168.0.185:135
+2012-04-05T20:06:01,233Z	DEBUG:  TCPClient async_connect call start
+2012-04-05T20:06:01,233Z	DEBUG:  TCPClient async_connect call end
+2012-04-05T20:06:22,249Z	ERROR:  Unable to connect to 192.168.0.185:135
+2012-04-05T20:06:22,249Z	Reason:  A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2012-04-05T20:06:22,311Z	ERROR:  Failed to send exploit stage payload to 192.168.0.185:135
+2012-04-05T20:06:22,311Z	Unsuccessful
+2012-04-05T20:06:22,311Z	Attempting target 192.168.0.186
+2012-04-05T20:06:22,311Z	Sending exploit stage
+2012-04-05T20:06:22,311Z	Using timeout value of 5 seconds
+2012-04-05T20:06:22,311Z	DEBUG:  Starting connect attempt to 192.168.0.186:135
+2012-04-05T20:06:22,342Z	DEBUG:  TCPClient async_connect call start
+2012-04-05T20:06:22,420Z	DEBUG:  TCPClient async_connect call end
+2012-04-05T20:06:22,499Z	DEBUG:  TCPClient successful connection
+2012-04-05T20:06:22,499Z	Connection channel (TCP) established:  192.168.0.175:1080 -> 192.168.0.186:135
+2012-04-05T20:06:22,499Z	Attempting to send 2404 bytes
+2012-04-05T20:06:22,499Z	Sent 2404 bytes
+2012-04-05T20:06:22,499Z	DEBUG:  TCPClient close() for 192.168.0.186:135
+2012-04-05T20:06:22,499Z	Closed connection
+2012-04-05T20:06:23,530Z	Sending remote loader payload
+2012-04-05T20:06:23,530Z	Using timeout value of 5 seconds
+2012-04-05T20:06:23,530Z	DEBUG:  Starting connect attempt to 192.168.0.186:4444
+2012-04-05T20:06:23,530Z	DEBUG:  TCPClient async_connect call start
+2012-04-05T20:06:23,530Z	DEBUG:  TCPClient async_connect call end
+2012-04-05T20:06:23,577Z	DEBUG:  TCPClient successful connection
+2012-04-05T20:06:23,577Z	Connection channel (TCP) established:  192.168.0.175:1083 -> 192.168.0.186:4444
+2012-04-05T20:06:23,577Z	Attempting to send 6550 bytes
+2012-04-05T20:06:23,577Z	Sent 6550 bytes
+2012-04-05T20:06:23,577Z	DEBUG:  TCPClient close() for 192.168.0.186:4444
+2012-04-05T20:06:23,577Z	Closed connection
+2012-04-05T20:06:23,577Z	Constructing options file with name WormOptions.2012-04-05T200623,577Z
+2012-04-05T20:06:23,577Z	DEBUG:  Starting connect attempt to 192.168.0.186:135
+2012-04-05T20:06:23,577Z	DEBUG:  TCPClient async_connect call start
+2012-04-05T20:06:23,577Z	DEBUG:  TCPClient async_connect call end
+2012-04-05T20:06:23,624Z	DEBUG:  TCPClient successful connection
+2012-04-05T20:06:23,624Z	DEBUG:  TCPClient close() for 192.168.0.186:135
+2012-04-05T20:06:23,624Z	Options file (with SAVE) has length of 123
+2012-04-05T20:06:23,624Z	Constructing worm binary SAVE using C:\Windows\Temp\benevolent-worm.exe
+2012-04-05T20:06:23,624Z	prepForSavingBinaryFile - wrote SAVE header
+2012-04-05T20:06:23,624Z	prepForSavingBinaryFile - size of C:\Windows\Temp\benevolent-worm.exe with destname of benevolent-worm.exe is 1496552 bytes
+2012-04-05T20:06:23,624Z	prepForSavingBinaryFile - Allocating buffer of size 1496552
+2012-04-05T20:06:23,624Z	prepForSavingBinaryFile - Buffer allocated
+2012-04-05T20:06:23,624Z	prepForSavingBinaryFile - content size is 1496583
+2012-04-05T20:06:23,624Z	Worm binary executable (with SAVE) has length of 1496583
+2012-04-05T20:06:23,624Z	Constructing os update binary SAVE using C:\Windows\Temp\os-update.exe
+2012-04-05T20:06:23,624Z	prepForSavingBinaryFile - wrote SAVE header
+2012-04-05T20:06:23,624Z	prepForSavingBinaryFile - size of C:\Windows\Temp\os-update.exe with destname of os-update.exe is 1291040 bytes
+2012-04-05T20:06:23,624Z	prepForSavingBinaryFile - Allocating buffer of size 1291040
+2012-04-05T20:06:23,624Z	prepForSavingBinaryFile - Buffer allocated
+2012-04-05T20:06:23,639Z	prepForSavingBinaryFile - content size is 1291065
+2012-04-05T20:06:23,639Z	Update binary executable (with SAVE) has length of 1291065
+2012-04-05T20:06:23,639Z	Construction EXEC command
+2012-04-05T20:06:23,655Z	Sending worm code to remote loader for SAVE and EXEC
+2012-04-05T20:06:23,655Z	Using timeout value of 5 seconds
+2012-04-05T20:06:23,655Z	DEBUG:  Starting connect attempt to 192.168.0.186:65534
+2012-04-05T20:06:23,655Z	DEBUG:  TCPClient async_connect call start
+2012-04-05T20:06:23,655Z	DEBUG:  TCPClient async_connect call end
+2012-04-05T20:06:23,702Z	DEBUG:  TCPClient successful connection
+2012-04-05T20:06:23,702Z	Connection channel (TCP) established:  192.168.0.175:1089 -> 192.168.0.186:65534
+2012-04-05T20:06:23,702Z	Attempting to send 2787866 bytes
+2012-04-05T20:06:23,827Z	Sent 2787866 bytes
+2012-04-05T20:06:23,827Z	DEBUG:  TCPClient close() for 192.168.0.186:65534
+2012-04-05T20:06:23,842Z	Closed connection
+2012-04-05T20:06:23,842Z	Successfully exploited 192.168.0.186

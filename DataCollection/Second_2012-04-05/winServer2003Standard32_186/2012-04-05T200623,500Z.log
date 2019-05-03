@@ -1,0 +1,65 @@
+﻿2012-04-05T20:06:23,500Z	Beginning execution
+2012-04-05T20:06:23,500Z	Log written to C:\WINDOWS\system32\config\systemprofile/ThesisWorm/2012-04-05T200623,500Z.log
+2012-04-05T20:06:23,500Z	Begin list of all environment variables and values:
+2012-04-05T20:06:23,500Z	ALLUSERSPROFILE ==> C:\Documents and Settings\All Users
+2012-04-05T20:06:23,500Z	ClusterLog ==> C:\WINDOWS\Cluster\cluster.log
+2012-04-05T20:06:23,500Z	CommonProgramFiles ==> C:\Program Files\Common Files
+2012-04-05T20:06:23,500Z	COMPUTERNAME ==> WINSERVER2003ST
+2012-04-05T20:06:23,500Z	ComSpec ==> C:\WINDOWS\system32\cmd.exe
+2012-04-05T20:06:23,500Z	NUMBER_OF_PROCESSORS ==> 1
+2012-04-05T20:06:23,500Z	OS ==> Windows_NT
+2012-04-05T20:06:23,500Z	Path ==> C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+2012-04-05T20:06:23,500Z	PATHEXT ==> .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH
+2012-04-05T20:06:23,500Z	PROCESSOR_ARCHITECTURE ==> x86
+2012-04-05T20:06:23,500Z	PROCESSOR_IDENTIFIER ==> x86 Family 6 Model 2 Stepping 3, GenuineIntel
+2012-04-05T20:06:23,500Z	PROCESSOR_LEVEL ==> 6
+2012-04-05T20:06:23,500Z	PROCESSOR_REVISION ==> 0203
+2012-04-05T20:06:23,500Z	ProgramFiles ==> C:\Program Files
+2012-04-05T20:06:23,500Z	PROMPT ==> $P$G
+2012-04-05T20:06:23,500Z	SystemDrive ==> C:
+2012-04-05T20:06:23,500Z	SystemRoot ==> C:\WINDOWS
+2012-04-05T20:06:23,500Z	TEMP ==> C:\WINDOWS\TEMP
+2012-04-05T20:06:23,500Z	TMP ==> C:\WINDOWS\TEMP
+2012-04-05T20:06:23,500Z	USERPROFILE ==> C:\WINDOWS\system32\config\systemprofile
+2012-04-05T20:06:23,500Z	windir ==> C:\WINDOWS
+2012-04-05T20:06:23,500Z	End of all environment variables and values
+2012-04-05T20:06:23,500Z	Begin list of argv:
+2012-04-05T20:06:23,500Z	C:\Windows\Temp\benevolent-worm.exe
+2012-04-05T20:06:23,500Z	benevolent-worm.exe
+2012-04-05T20:06:23,500Z	WormOptions.2012-04-05T200623,577Z
+2012-04-05T20:06:23,500Z	os-update.exe
+2012-04-05T20:06:23,500Z	End list of argv:
+2012-04-05T20:06:23,500Z	Version hash:  356d08eb50ab1bbec9b176635f9e189e
+2012-04-05T20:06:23,500Z	Hostname (according to OS not DNS) is winServer2003Standard32_186
+2012-04-05T20:06:23,500Z	Host addresses on machine:
+2012-04-05T20:06:23,515Z	192.168.0.186
+2012-04-05T20:06:23,515Z	Parent (source) of worm IP address:  192.168.0.175:1086
+2012-04-05T20:06:23,515Z	Parent (source) timestamp:  2012-04-05T20:06:23,624Z
+2012-04-05T20:06:23,515Z	Root server for worm has IP/ID of:  192.168.0.2
+2012-04-05T20:06:23,515Z	Target List:
+2012-04-05T20:06:23,515Z		192.168.0.187
+2012-04-05T20:06:23,515Z	Local system time for worm is 2012-04-05T20:06:23,515Z
+2012-04-05T20:06:23,515Z	Applying OS patch to this machine
+2012-04-05T20:06:23,515Z	DEBUG:	C:\Windows\Temp\os-update.exe -u -z -q
+2012-04-05T20:06:24,984Z	ERROR:  Application of update returned error exit code of 1603
+2012-04-05T20:06:24,984Z	Attempting target 192.168.0.187
+2012-04-05T20:06:24,984Z	Sending exploit stage
+2012-04-05T20:06:24,984Z	Using timeout value of 5 seconds
+2012-04-05T20:06:24,984Z	DEBUG:  Starting connect attempt to 192.168.0.187:135
+2012-04-05T20:06:24,984Z	DEBUG:  TCPClient async_connect call start
+2012-04-05T20:06:25,0Z	DEBUG:  TCPClient async_connect call end
+2012-04-05T20:06:25,31Z	DEBUG:  TCPClient successful connection
+2012-04-05T20:06:25,31Z	Connection channel (TCP) established:  192.168.0.186:1034 -> 192.168.0.187:135
+2012-04-05T20:06:25,31Z	Attempting to send 2404 bytes
+2012-04-05T20:06:25,31Z	Sent 2404 bytes
+2012-04-05T20:06:25,31Z	DEBUG:  TCPClient close() for 192.168.0.187:135
+2012-04-05T20:06:25,31Z	Closed connection
+2012-04-05T20:06:26,31Z	Sending remote loader payload
+2012-04-05T20:06:26,31Z	Using timeout value of 5 seconds
+2012-04-05T20:06:26,31Z	DEBUG:  Starting connect attempt to 192.168.0.187:4444
+2012-04-05T20:06:26,31Z	DEBUG:  TCPClient async_connect call start
+2012-04-05T20:06:26,46Z	DEBUG:  TCPClient async_connect call end
+2012-04-05T20:06:27,31Z	ERROR:  Unable to connect to 192.168.0.187:4444
+2012-04-05T20:06:27,31Z	Reason:  No connection could be made because the target machine actively refused it
+2012-04-05T20:06:27,31Z	ERROR:  Failed to send remote loader payload to 192.168.0.187:4444
+2012-04-05T20:06:27,31Z	Unsuccessful

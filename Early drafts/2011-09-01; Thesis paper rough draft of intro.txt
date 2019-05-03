@@ -1,0 +1,41 @@
+You'll want to combine your short descriptions of your project you gave to Prof. Han and Cisco.
+
+
+==========================================
+
+
+Basic intro to thesis paper:
+
+
+Since as early as 1949 the theory of self-replicating computer programs has been developed.  [John von Neumann]  Today we see this theory put into practice by the number of computer viruses, trojans, and worms in existance.  The overwhelming purpose of these self-replicating programs is to infect vulnerable systems and execute a malicious payload varying from file deletion, e-mail spamming, denial of service attacks, login credential stealing, and theft of money via online banking compromise.  While in the past not all had a damanging payload, affecting the infected system and surrounding systems, the last few years have seen much more malicous and criminal intent in the programs' design.
+
+Over the last few decades the traditonal response to these malicous programs has been "anti-virus" software.  This software relied on obtaining signatures or patterns of the malicous programs so they could be blocked from infecting a machine or removed from one.  This had led to a cat-and-mouse game between the anti-virus vendors and the malicous program writers.  The growth of the Internet has interconnected millions of computing devices on a large shared network.  This has led to the adaptation of malcious program writers to move from the traditional virus model of attaching to an executable or disk the user executes or opens to full self-replicating and moving computer worms.  These programs start by infecting a machine on a network and then spread themselves automatically to other machines through unpatched software on the other machines.  The success of these worms comes highly from the fact that the larger user base of the Internet has users who do not reguarally patch t!
+heir computer software.  This leads to not only that user's devices being infected but also uses their devices to infect others on the same network and the public Internet.  This has allowed malicous persons to gain control of tens of thousands of computing devices to execute code to steal data or attack other networks at their desire.  In some cases the victim of the infection doesn't even know their machine has been taken over or is suscitable to being taken over.
+
+Anti-virus companies, operating system companies, and IT organizations have attempted to keep up with the growing threat, but their efforts can still not fully prevent infection on every machine.  In some cases the malicous program even has the abilty to disable anti-virus and software update programs so as to retain control of the infected machine.  Some newer emergent technologies are being actively developed and slowly deployed that, in some cases, can detect a machine that has been infected so as to disconnect it from the network to reduce infection of other machines.
+
+Yet another method that has been proposed multiple times before but not accepted as plausible is to write a computer worm that is self-replicating but instead of infecting and taking control of machines it would patch them to protect them instead.  This type of program is known as a "benevolent worm."  The major reason until now that the industry and academic community as a whole has rejected this idea is that computer programs by human nature are likely to have coding errors or bugs which can cause unexpected behavior.  The risk of a benevolent worm causing more damage when it was intended to repair a vulnerable system was considered not worth the benefit of the protection.  Major questions such as what if it unknowningly brought down a major power-grid system or caused a critical hospital system to crash have been asked.  The most recently opinion, however, is that the large number of infected systems under the control of persons with unknown or malicous intent is more dange!
+rous now than these possible risks from a benevolent worm.  Also the possiblity of critical systems such as power plant control systems being vulnerable in the first place and going unnoticed by the operations personanel for that system poses more of a risk to being succettible to unknown and hidden persons versus an out of control benevolent worm.  This paper will address the risks of benevolent worms for use as a way to combat malicious software and patch at-risk systems.
+
+
+TODO    Related Work
+
+
+Research Questions
+
+What are the possible risks with releasing a benevolent worm into the wild?
+
+Are these risks actually plausible?
+
+Can a benevolent worm be developed with sufficient quality such that the risks presented by such a program be mitigated or heavily out-weight the risks of having infected systems on the network?
+
+
+
+TODO    Research Methods
+
+Analysis of past computer worms (both malicious and benevolent).
+       What was their purpose?
+       What human emphaties did they exploit?
+       What went wrong?
+               What could be corrected?
+       Were they successful in their intent (good or bad)?

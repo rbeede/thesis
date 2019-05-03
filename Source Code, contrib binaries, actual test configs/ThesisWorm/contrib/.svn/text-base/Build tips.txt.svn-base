@@ -1,0 +1,4 @@
+Build with symbols removed (-O3 or -Os)
+
+Use UPX to compress executable more http://upx.sourceforge.net/
+	upx --best thesisworm.exe

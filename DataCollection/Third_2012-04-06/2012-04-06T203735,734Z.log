@@ -1,0 +1,159 @@
+﻿2012-04-06T20:37:35,734Z	Beginning execution
+2012-04-06T20:37:35,734Z	Log written to C:\Users\Administrator\AppData\Roaming/ThesisWorm/2012-04-06T203735,734Z.log
+2012-04-06T20:37:35,734Z	Begin list of all environment variables and values:
+2012-04-06T20:37:35,734Z	ALLUSERSPROFILE ==> C:\ProgramData
+2012-04-06T20:37:35,734Z	APPDATA ==> C:\Users\Administrator\AppData\Roaming
+2012-04-06T20:37:35,734Z	CLIENTNAME ==> ROMA
+2012-04-06T20:37:35,734Z	CommonProgramFiles ==> C:\Program Files (x86)\Common Files
+2012-04-06T20:37:35,734Z	CommonProgramFiles(x86) ==> C:\Program Files (x86)\Common Files
+2012-04-06T20:37:35,734Z	CommonProgramW6432 ==> C:\Program Files\Common Files
+2012-04-06T20:37:35,734Z	COMPUTERNAME ==> WIN-SIO1RQKTOG0
+2012-04-06T20:37:35,734Z	ComSpec ==> C:\Windows\system32\cmd.exe
+2012-04-06T20:37:35,734Z	FP_NO_HOST_CHECK ==> NO
+2012-04-06T20:37:35,734Z	HOMEDRIVE ==> C:
+2012-04-06T20:37:35,734Z	HOMEPATH ==> \Users\Administrator
+2012-04-06T20:37:35,734Z	LOCALAPPDATA ==> C:\Users\Administrator\AppData\Local
+2012-04-06T20:37:35,734Z	LOGONSERVER ==> \\WIN-SIO1RQKTOG0
+2012-04-06T20:37:35,734Z	NUMBER_OF_PROCESSORS ==> 1
+2012-04-06T20:37:35,734Z	OS ==> Windows_NT
+2012-04-06T20:37:35,734Z	Path ==> C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\
+2012-04-06T20:37:35,734Z	PATHEXT ==> .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+2012-04-06T20:37:35,734Z	PROCESSOR_ARCHITECTURE ==> x86
+2012-04-06T20:37:35,734Z	PROCESSOR_ARCHITEW6432 ==> AMD64
+2012-04-06T20:37:35,734Z	PROCESSOR_IDENTIFIER ==> Intel64 Family 6 Model 2 Stepping 3, GenuineIntel
+2012-04-06T20:37:35,734Z	PROCESSOR_LEVEL ==> 6
+2012-04-06T20:37:35,734Z	PROCESSOR_REVISION ==> 0203
+2012-04-06T20:37:35,734Z	ProgramData ==> C:\ProgramData
+2012-04-06T20:37:35,734Z	ProgramFiles ==> C:\Program Files (x86)
+2012-04-06T20:37:35,734Z	ProgramFiles(x86) ==> C:\Program Files (x86)
+2012-04-06T20:37:35,734Z	ProgramW6432 ==> C:\Program Files
+2012-04-06T20:37:35,734Z	PROMPT ==> $P$G
+2012-04-06T20:37:35,734Z	PSModulePath ==> C:\Windows\system32\WindowsPowerShell\v1.0\Modules\
+2012-04-06T20:37:35,734Z	PUBLIC ==> C:\Users\Public
+2012-04-06T20:37:35,734Z	SESSIONNAME ==> RDP-Tcp#0
+2012-04-06T20:37:35,734Z	SystemDrive ==> C:
+2012-04-06T20:37:35,734Z	SystemRoot ==> C:\Windows
+2012-04-06T20:37:35,734Z	TEMP ==> C:\Users\ADMINI~1\AppData\Local\Temp\2
+2012-04-06T20:37:35,734Z	TMP ==> C:\Users\ADMINI~1\AppData\Local\Temp\2
+2012-04-06T20:37:35,734Z	USERDOMAIN ==> WIN-SIO1RQKTOG0
+2012-04-06T20:37:35,734Z	USERNAME ==> Administrator
+2012-04-06T20:37:35,734Z	USERPROFILE ==> C:\Users\Administrator
+2012-04-06T20:37:35,734Z	windir ==> C:\Windows
+2012-04-06T20:37:35,734Z	End of all environment variables and values
+2012-04-06T20:37:35,734Z	Begin list of argv:
+2012-04-06T20:37:35,734Z	thesisworm.exe
+2012-04-06T20:37:35,734Z	thesisworm.exe
+2012-04-06T20:37:35,734Z	Research_Options_File.txt
+2012-04-06T20:37:35,734Z	WindowsXP-KB823980-x86-ENU.exe
+2012-04-06T20:37:35,734Z	ISSEED
+2012-04-06T20:37:35,734Z	End list of argv:
+2012-04-06T20:37:35,734Z	Version hash:  356d08eb50ab1bbec9b176635f9e189e
+2012-04-06T20:37:35,797Z	Hostname (according to OS not DNS) is WIN-SIO1RQKTOG0
+2012-04-06T20:37:35,797Z	Host addresses on machine:
+2012-04-06T20:37:35,797Z	fe80::f4d1:6809:151b:b1d2%17
+2012-04-06T20:37:35,797Z	fe80::98a0:4983:b6a0:cd83%15
+2012-04-06T20:37:35,797Z	fe80::59fd:7237:e6e2:6d14%14
+2012-04-06T20:37:35,797Z	172.16.0.50
+2012-04-06T20:37:35,797Z	192.168.0.2
+2012-04-06T20:37:35,797Z	10.0.0.137
+2012-04-06T20:37:35,797Z	Parent (source) of worm IP address:  192.168.0.2
+2012-04-06T20:37:35,797Z	Parent (source) timestamp:  2012-03-23T14:50:37,537Z
+2012-04-06T20:37:35,797Z	Root server for worm has IP/ID of:  192.168.0.2
+2012-04-06T20:37:35,797Z	Target List:
+2012-04-06T20:37:35,797Z		192.168.0.150
+2012-04-06T20:37:35,797Z		192.168.0.151
+2012-04-06T20:37:35,797Z		192.168.0.152
+2012-04-06T20:37:35,797Z		192.168.0.153
+2012-04-06T20:37:35,797Z		192.168.0.154
+2012-04-06T20:37:35,797Z		192.168.0.155
+2012-04-06T20:37:35,797Z		192.168.0.156
+2012-04-06T20:37:35,797Z		192.168.0.157
+2012-04-06T20:37:35,797Z		192.168.0.158
+2012-04-06T20:37:35,797Z		192.168.0.159
+2012-04-06T20:37:35,797Z		192.168.0.160
+2012-04-06T20:37:35,797Z		192.168.0.161
+2012-04-06T20:37:35,797Z		192.168.0.162
+2012-04-06T20:37:35,797Z		192.168.0.163
+2012-04-06T20:37:35,797Z		192.168.0.164
+2012-04-06T20:37:35,797Z		192.168.0.165
+2012-04-06T20:37:35,797Z		192.168.0.166
+2012-04-06T20:37:35,797Z		192.168.0.167
+2012-04-06T20:37:35,812Z		192.168.0.168
+2012-04-06T20:37:35,812Z		192.168.0.169
+2012-04-06T20:37:35,812Z		192.168.0.170
+2012-04-06T20:37:35,812Z		192.168.0.171
+2012-04-06T20:37:35,812Z		192.168.0.172
+2012-04-06T20:37:35,812Z		192.168.0.173
+2012-04-06T20:37:35,812Z		192.168.0.174
+2012-04-06T20:37:35,812Z		192.168.0.175
+2012-04-06T20:37:35,812Z		192.168.0.176
+2012-04-06T20:37:35,812Z		192.168.0.177
+2012-04-06T20:37:35,812Z		192.168.0.178
+2012-04-06T20:37:35,812Z		192.168.0.179
+2012-04-06T20:37:35,812Z		192.168.0.180
+2012-04-06T20:37:35,812Z		192.168.0.181
+2012-04-06T20:37:35,812Z		192.168.0.182
+2012-04-06T20:37:35,812Z		192.168.0.183
+2012-04-06T20:37:35,812Z		192.168.0.184
+2012-04-06T20:37:35,812Z		192.168.0.185
+2012-04-06T20:37:35,812Z		192.168.0.186
+2012-04-06T20:37:35,812Z		192.168.0.187
+2012-04-06T20:37:35,812Z	Local system time for worm is 2012-04-06T20:37:35,812Z
+2012-04-06T20:37:35,812Z	Worm running as seed so not executing OS update patch for this machine
+2012-04-06T20:37:35,812Z	Attempting target 192.168.0.150
+2012-04-06T20:37:35,812Z	Sending exploit stage
+2012-04-06T20:37:35,812Z	Using timeout value of 5 seconds
+2012-04-06T20:37:35,812Z	DEBUG:  Starting connect attempt to 192.168.0.150:135
+2012-04-06T20:37:35,812Z	DEBUG:  TCPClient async_connect call start
+2012-04-06T20:37:35,812Z	DEBUG:  TCPClient async_connect call end
+2012-04-06T20:37:35,812Z	DEBUG:  TCPClient successful connection
+2012-04-06T20:37:35,812Z	Connection channel (TCP) established:  192.168.0.2:49180 -> 192.168.0.150:135
+2012-04-06T20:37:35,812Z	Attempting to send 2404 bytes
+2012-04-06T20:37:35,812Z	Sent 2404 bytes
+2012-04-06T20:37:35,812Z	DEBUG:  TCPClient close() for 192.168.0.150:135
+2012-04-06T20:37:35,812Z	Closed connection
+2012-04-06T20:37:36,826Z	Sending remote loader payload
+2012-04-06T20:37:36,826Z	Using timeout value of 5 seconds
+2012-04-06T20:37:36,826Z	DEBUG:  Starting connect attempt to 192.168.0.150:4444
+2012-04-06T20:37:36,826Z	DEBUG:  TCPClient async_connect call start
+2012-04-06T20:37:36,826Z	DEBUG:  TCPClient async_connect call end
+2012-04-06T20:37:36,826Z	DEBUG:  TCPClient successful connection
+2012-04-06T20:37:36,826Z	Connection channel (TCP) established:  192.168.0.2:49183 -> 192.168.0.150:4444
+2012-04-06T20:37:36,826Z	Attempting to send 6550 bytes
+2012-04-06T20:37:36,826Z	Sent 6550 bytes
+2012-04-06T20:37:36,826Z	DEBUG:  TCPClient close() for 192.168.0.150:4444
+2012-04-06T20:37:36,826Z	Closed connection
+2012-04-06T20:37:36,826Z	Constructing options file with name WormOptions.2012-04-06T203736,826Z
+2012-04-06T20:37:36,826Z	DEBUG:  Starting connect attempt to 192.168.0.150:135
+2012-04-06T20:37:36,826Z	DEBUG:  TCPClient async_connect call start
+2012-04-06T20:37:36,826Z	DEBUG:  TCPClient async_connect call end
+2012-04-06T20:37:36,826Z	DEBUG:  TCPClient successful connection
+2012-04-06T20:37:36,826Z	DEBUG:  TCPClient close() for 192.168.0.150:135
+2012-04-06T20:37:36,826Z	Options file (with SAVE) has length of 662
+2012-04-06T20:37:36,826Z	Constructing worm binary SAVE using C:\Users\Administrator\Desktop\thesisworm.exe
+2012-04-06T20:37:36,826Z	prepForSavingBinaryFile - wrote SAVE header
+2012-04-06T20:37:36,826Z	prepForSavingBinaryFile - size of C:\Users\Administrator\Desktop\thesisworm.exe with destname of benevolent-worm.exe is 1496552 bytes
+2012-04-06T20:37:36,826Z	prepForSavingBinaryFile - Allocating buffer of size 1496552
+2012-04-06T20:37:36,826Z	prepForSavingBinaryFile - Buffer allocated
+2012-04-06T20:37:36,889Z	prepForSavingBinaryFile - content size is 1496583
+2012-04-06T20:37:36,889Z	Worm binary executable (with SAVE) has length of 1496583
+2012-04-06T20:37:36,889Z	Constructing os update binary SAVE using C:\Users\Administrator\Desktop\WindowsXP-KB823980-x86-ENU.exe
+2012-04-06T20:37:36,889Z	prepForSavingBinaryFile - wrote SAVE header
+2012-04-06T20:37:36,889Z	prepForSavingBinaryFile - size of C:\Users\Administrator\Desktop\WindowsXP-KB823980-x86-ENU.exe with destname of os-update.exe is 1291040 bytes
+2012-04-06T20:37:36,889Z	prepForSavingBinaryFile - Allocating buffer of size 1291040
+2012-04-06T20:37:36,889Z	prepForSavingBinaryFile - Buffer allocated
+2012-04-06T20:37:36,936Z	prepForSavingBinaryFile - content size is 1291065
+2012-04-06T20:37:36,936Z	Update binary executable (with SAVE) has length of 1291065
+2012-04-06T20:37:36,936Z	Construction EXEC command
+2012-04-06T20:37:36,936Z	Sending worm code to remote loader for SAVE and EXEC
+2012-04-06T20:37:36,936Z	Using timeout value of 5 seconds
+2012-04-06T20:37:36,936Z	DEBUG:  Starting connect attempt to 192.168.0.150:65534
+2012-04-06T20:37:36,936Z	DEBUG:  TCPClient async_connect call start
+2012-04-06T20:37:36,951Z	DEBUG:  TCPClient async_connect call end
+2012-04-06T20:37:36,951Z	DEBUG:  TCPClient successful connection
+2012-04-06T20:37:36,951Z	Connection channel (TCP) established:  192.168.0.2:49189 -> 192.168.0.150:65534
+2012-04-06T20:37:36,951Z	Attempting to send 2788405 bytes
+2012-04-06T20:37:37,45Z	Sent 2788405 bytes
+2012-04-06T20:37:37,45Z	DEBUG:  TCPClient close() for 192.168.0.150:65534
+2012-04-06T20:37:37,45Z	Closed connection
+2012-04-06T20:37:37,45Z	Successfully exploited 192.168.0.150
